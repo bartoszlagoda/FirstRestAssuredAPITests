@@ -38,4 +38,20 @@ public class VerifyResponseTests {
                 .all()
                 .body(Matchers.containsString("Lekcja 172: Nadpisywanie istniejącego posta"));
     }
+
+    @Test
+    public void checkSpecificFieldTest(){
+
+        given()
+                .log()
+                .all()
+                .when()
+                .get("http://localhost:3000/posts/{postId}", 1)
+                .then()
+                .log()
+                .all()
+                .body("title",Matchers.equalTo("Lekcja 172: Nadpisywanie istniejącego posta"))
+                .and()
+                .body("author", Matchers.equalTo("bartoszlagoda"));
+    }
 }

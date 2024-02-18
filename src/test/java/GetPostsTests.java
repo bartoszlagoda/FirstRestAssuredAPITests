@@ -2,7 +2,7 @@ import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.when;
 
-public class GetPostsTest {
+public class GetPostsTests {
 /*
 *  Given - warunek wstepny      Uzytkownik jest zalogowany
 *  When - wykonana akcja        Doda jeden produkt do koszyka

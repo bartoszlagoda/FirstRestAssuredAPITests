@@ -95,5 +95,7 @@ public class VerifyResponseTests {
                 .extract().body().as(Post.class);
 
         Assertions.assertEquals(newPost,createdPost);
+        Assertions.assertEquals(createdPost.getTitle(),"Lekcja 184: Weryfikacja ciała odpowiedzi - porównanie obiektów");
+        Assertions.assertEquals(createdPost.getAuthor(),"Jan Kowalski");
     }
 }

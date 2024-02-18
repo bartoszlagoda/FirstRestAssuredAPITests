@@ -18,7 +18,7 @@ public class GetSpecificFieldValueTest {
     @Test
     public void checkSpecificFieldWithPathWithoutVarAuthorTest(){
 
-        Response response = RestAssured.get("http://localhost:3000/posts/1").path("author");
+        String response = RestAssured.get("http://localhost:3000/posts/1").path("author");
 
         Assertions.assertEquals(response,"bartoszlagoda");
     }

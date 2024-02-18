@@ -1,5 +1,8 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL) // bierz pod uwagę tylko to co nie jest nullem
 public class Post {
 
     private String title;

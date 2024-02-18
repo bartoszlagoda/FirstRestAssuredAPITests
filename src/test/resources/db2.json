@@ -23,7 +23,12 @@
         "name": "Andrew",
         "money": 50000,
         "numbers": [52,3,12,11,18,22]
-    }]
+    },{
+        "winnerId": 3,
+        "name": "Andrew",
+        "money": 50000,
+        "numbers": [52,3,12,11,18,22]
+      }]
   }
   ]
 }

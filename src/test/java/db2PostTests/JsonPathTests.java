@@ -12,7 +12,6 @@ public class JsonPathTests {
     @Test
     public void checkSpecificFieldJsonPath(){
         Response response = RestAssured.get("http://localhost:3000/posts/1");
-
         System.out.println(response.asString());
 
         //wyciągnięcie wartości secretString
@@ -43,6 +42,8 @@ public class JsonPathTests {
         Map<String,?> winnerMaxId = response.path("winners.max {it.winnerId}");
         // suma pieniędzy, które są wygraną
         Integer moneySum = response.path("winners.collect{it.money}.sum()");
+        // lista z id zwyciezcow o imieniu Andrew
+        List<Integer> winnerIds = response.path("winners.findAll {it.name=='Andrew'}.winnerId");
 
     }
 }

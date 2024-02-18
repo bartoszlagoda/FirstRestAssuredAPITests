@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Test;
 
+import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.when;
 
 public class GetPostsTests {
@@ -41,5 +42,30 @@ public class GetPostsTests {
                 .get("http://localhost:3000/posts/1")
                 .then()
                 .log().all(); // zaloguj wszystkie informacje na temat requestu
+    }
+
+    @Test
+    public void getPathParamPostTest(){
+        given()
+                .log()
+                .all()
+                .pathParam("postId", 1)
+                .when()
+                .get("http://localhost:3000/posts/{postId}")
+                .then()
+                .log()
+                .all();
+    }
+
+    @Test
+    public void getParamPostTest(){
+        given()
+                .log()
+                .all()
+                .when()
+                .get("http://localhost:3000/posts/{postId}", 1)
+                .then()
+                .log()
+                .all();
     }
 }

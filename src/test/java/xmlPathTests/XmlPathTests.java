@@ -1,6 +1,7 @@
 package xmlPathTests;
 
 import io.restassured.path.xml.XmlPath;
+import io.restassured.path.xml.element.Node;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -32,5 +33,10 @@ public class XmlPathTests {
         List<String> nazwy = XmlPath.from(xml).getList("filmy.film.nazwa");
         //pobranie wartosci atrybutu gatunek dla pierwszego filmu
         String gatunek = XmlPath.from(xml).get("filmy.film[0].@gatunek");
+        // pobranie wszystkich gałęzi zawierających informacje o filmach (wszystkie nody oznaczone jako film)
+        List<Node> filmy = XmlPath.from(xml).get("filmy.film.findAll {element -> return element}");
+        // wyciągnięcie z powyższej listy nazwy filmów
+        String nazwaFilmu = filmy.get(2).get("nazwa").toString();
+
     }
 }

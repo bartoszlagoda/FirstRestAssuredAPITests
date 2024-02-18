@@ -64,8 +64,8 @@ public class AddPostsTests {
     @Test
     public void addPostFromClassTest(){
         Post newPost = new Post();
-        newPost.setTitle("Lekcja 171: Dodani nowego posta - klasa Post");
-        newPost.setAuthor("bartoszlagoda");
+        newPost.setTitle("Lekcja 178: Filtrowanie postów - query params");
+        newPost.setAuthor("unknownauthor");
 
         given()
                 .log().all() // wypisanie logów requesta

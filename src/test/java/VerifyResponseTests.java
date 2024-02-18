@@ -1,3 +1,4 @@
+import io.restassured.http.ContentType;
 import model.Post;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Assertions;
@@ -75,5 +76,24 @@ public class VerifyResponseTests {
                 () -> Assertions.assertEquals(newPost.getTitle(), "Lekcja 172: Nadpisywanie istniejącego posta"),
                 () -> Assertions.assertEquals(newPost.getId(), 1)
         );
+    }
+
+    @Test
+    public void addPostObjectTest(){
+        Post newPost = new Post();
+        newPost.setTitle("Lekcja 184: Weryfikacja ciała odpowiedzi - porównanie obiektów");
+        newPost.setAuthor("Jan Kowalski");
+
+        Post createdPost = given()
+                .log().all()
+                .contentType(ContentType.JSON)
+                .body(newPost)
+                .when()
+                .post("http://localhost:3000/posts")
+                .then()
+                .log().all()
+                .extract().body().as(Post.class);
+
+        Assertions.assertEquals(newPost,createdPost);
     }
 }

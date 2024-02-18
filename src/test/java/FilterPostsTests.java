@@ -1,3 +1,4 @@
+import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
@@ -30,7 +31,8 @@ public class FilterPostsTests {
                 .get("http://localhost:3000/posts")
                 .then()
                 .log()
-                .all();
+                .all()
+                .statusCode(200);
     }
 
     @Test
@@ -46,6 +48,24 @@ public class FilterPostsTests {
                 .get("http://localhost:3000/posts")
                 .then()
                 .log()
-                .all();
+                .all()
+                .statusCode(Matchers.equalTo(200)); // Matchery mają wiele funkcji walidujących
+    }
+
+    @Test
+    public void filterPostsByAuthorAndTitleWithStatusLineValidationTest(){
+        Map<String,Object> params = new HashMap<>();
+        params.put("author","bartoszlagoda");
+        params.put("title","Lekca 167: Dodanie nowego posta - zmiana content type");
+        given()
+                .log()
+                .all()
+                .queryParams(params)
+                .when()
+                .get("http://localhost:3000/posts")
+                .then()
+                .log()
+                .all()
+                .statusLine(Matchers.containsString("OK"));
     }
 }

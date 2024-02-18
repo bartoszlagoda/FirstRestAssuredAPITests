@@ -1,0 +1,29 @@
+{
+  "posts": [{
+    "id": 1,
+    "secretString": "5",
+    "specificField": "101920205",
+    "winning-numbers": [2,45,34,23,7,5,3],
+    "money": 100000.22,
+    "winners": [
+      {
+        "winnerId": 23,
+        "name": "John",
+        "money": 50000,
+        "numbers": [
+          2,
+          45,
+          34,
+          23,
+          3,
+          5
+        ]
+      },{
+        "winnerId": 54,
+        "name": "Andrew",
+        "money": 50000,
+        "numbers": [52,3,12,11,18,22]
+    }]
+  }
+  ]
+}

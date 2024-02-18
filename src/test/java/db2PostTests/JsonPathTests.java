@@ -34,8 +34,8 @@ public class JsonPathTests {
         List<Map<String,?>> winners = response.path("winners");
 
         // zwyciezca, ktory ma na imie Andrew
-        Map<String,?> winnerInfo = response.path("winners.find {it.name='Andrew'}");
-        Integer winnerId = response.path("winners.find {it.name='Andrew'}.winnerId");
+        Map<String,?> winnerInfo = response.path("winners.find {it.name=='Andrew'}");
+        Integer winnerId = response.path("winners.find {it.name=='Andrew'}.winnerId");
         // największa wartość z tablicy z wygranymi numerami
         Integer maxNumber = response.path("winning-numbers.max()");
         Integer minNumber = response.path("winning-numbers.min()");

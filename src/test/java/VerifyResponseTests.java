@@ -1,4 +1,6 @@
+import model.Post;
 import org.hamcrest.Matchers;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
@@ -53,5 +55,25 @@ public class VerifyResponseTests {
                 .body("title",Matchers.equalTo("Lekcja 172: Nadpisywanie istniejącego posta"))
                 .and()
                 .body("author", Matchers.equalTo("bartoszlagoda"));
+    }
+
+    @Test
+    public void getPostObjectTest(){
+
+        Post newPost = given()
+                .log()
+                .all()
+                .when()
+                .get("http://localhost:3000/posts/{postId}", 1)
+                .then()
+                .log()
+                .all()
+                .extract().as(Post.class);
+
+        Assertions.assertAll(
+                () -> Assertions.assertEquals(newPost.getAuthor(), "bartoszlagoda"),
+                () -> Assertions.assertEquals(newPost.getTitle(), "Lekcja 172: Nadpisywanie istniejącego posta"),
+                () -> Assertions.assertEquals(newPost.getId(), 1)
+        );
     }
 }

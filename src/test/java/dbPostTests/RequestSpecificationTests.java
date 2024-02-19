@@ -1,7 +1,10 @@
 package dbPostTests;
 
+import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
+import io.restassured.filter.log.RequestLoggingFilter;
+import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import org.junit.jupiter.api.BeforeEach;
@@ -24,6 +27,9 @@ public class RequestSpecificationTests {
         resSpec = new ResponseSpecBuilder()
                 .expectStatusCode(200)
                 .build();
+        ResponseLoggingFilter responseLoggingFilter = new ResponseLoggingFilter(); // zamiast then().log().body()
+        RequestLoggingFilter requestLoggingFilter = new RequestLoggingFilter(); // zamiast given().log().body()
+        RestAssured.filters(requestLoggingFilter,responseLoggingFilter);
     }
 
     @Test
@@ -33,8 +39,6 @@ public class RequestSpecificationTests {
         when()
                 .get()
                 .then()
-                .log()
-                .body() // zaloguj tylko body z response
                 .spec(resSpec);
     }
 
@@ -46,7 +50,6 @@ public class RequestSpecificationTests {
         when()
                 .get("/1")
                 .then()
-                .log().body() // zaloguj tylko body z response
                 .statusCode(200);
     }
 }

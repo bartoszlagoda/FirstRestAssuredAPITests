@@ -1,11 +1,11 @@
-package dbPostTests;
+package dbPostTest;
 
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.when;
 
-public class GetPostsTests {
+public class GetPostsTest {
     /*
      *  Given - warunek wstepny      Uzytkownik jest zalogowany
      *  When - wykonana akcja        Doda jeden produkt do koszyka

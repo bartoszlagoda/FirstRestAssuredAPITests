@@ -1,4 +1,4 @@
-package dbPostTests;
+package dbPostTest;
 
 import io.restassured.http.ContentType;
 import model.Post;
@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class VerifyResponseTests {
+public class VerifyResponseTest {
 
     @Test
     public void getAllPostTest(){

@@ -1,4 +1,4 @@
-package dbPostTests;
+package dbPostTest;
 
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class RequestSpecificationTests {
+public class RequestSpecificationTest {
 
     RequestSpecification spec;
     ResponseSpecification resSpec;

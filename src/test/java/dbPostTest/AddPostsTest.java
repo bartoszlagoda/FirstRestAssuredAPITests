@@ -1,4 +1,4 @@
-package dbPostTests;
+package dbPostTest;
 
 import io.restassured.http.ContentType;
 import model.Post;
@@ -10,7 +10,7 @@ import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
-public class AddPostsTests {
+public class AddPostsTest {
 
     @Test
     public void addPostAsStringTest() {

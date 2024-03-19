@@ -1,4 +1,4 @@
-package dbPostTests;
+package dbPostTest;
 
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Assertions;
@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 import static io.restassured.RestAssured.given;
 
-public class ResponseTimeTests {
+public class ResponseTimeTest {
 
     @Test
     public void getPostTest() {

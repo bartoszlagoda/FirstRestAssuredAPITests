@@ -1,4 +1,4 @@
-package xmlPathTests;
+package xmlPathTest;
 
 import io.restassured.path.xml.XmlPath;
 import io.restassured.path.xml.element.Node;
@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-public class XmlPathTests {
+public class XmlPathTest {
 
     @Test
     public void xmlPathTest(){

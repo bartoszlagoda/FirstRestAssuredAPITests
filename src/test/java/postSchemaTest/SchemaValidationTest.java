@@ -1,11 +1,11 @@
-package postSchemaTests;
+package postSchemaTest;
 
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
-public class SchemaValidationTests {
+public class SchemaValidationTest {
 
     @Test
     public void getPostTest(){

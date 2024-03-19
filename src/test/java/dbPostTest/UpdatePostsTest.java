@@ -1,4 +1,4 @@
-package dbPostTests;
+package dbPostTest;
 
 import io.restassured.http.ContentType;
 import model.Post;
@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class UpdatePostsTests {
+public class UpdatePostsTest {
 
     @Test
     public void updatePostTest(){

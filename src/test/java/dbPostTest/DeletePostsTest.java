@@ -1,10 +1,10 @@
-package dbPostTests;
+package dbPostTest;
 
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.when;
 
-public class DeletePostsTests {
+public class DeletePostsTest {
 
     @Test
     public void deletePost(){

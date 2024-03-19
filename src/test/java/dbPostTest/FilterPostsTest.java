@@ -1,4 +1,4 @@
-package dbPostTests;
+package dbPostTest;
 
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
@@ -8,7 +8,7 @@ import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
-public class FilterPostsTests {
+public class FilterPostsTest {
 
     @Test
     public void filterPostsByAuthorTest(){

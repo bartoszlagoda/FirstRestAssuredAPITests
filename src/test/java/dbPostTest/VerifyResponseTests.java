@@ -1,4 +1,4 @@
-package dbPostTests;
+package dbPostTest;
 
 import io.restassured.http.ContentType;
 import model.Post;

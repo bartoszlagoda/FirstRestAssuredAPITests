@@ -1,4 +1,4 @@
-package db2PostTests;
+package db2PostTest;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -7,10 +7,10 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 import java.util.Map;
 
-public class JsonPathTests {
+public class JsonPathTest {
 
     @Test
-    public void checkSpecificFieldJsonPath(){
+    public void testCheckSpecificFieldJsonPath(){
         Response response = RestAssured.get("http://localhost:3000/posts/1");
         System.out.println(response.asString());
 

@@ -1,4 +1,4 @@
-package dbPostTests;
+package dbPostTest;
 
 import org.junit.jupiter.api.Test;
 

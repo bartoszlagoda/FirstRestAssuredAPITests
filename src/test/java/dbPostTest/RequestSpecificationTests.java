@@ -1,4 +1,4 @@
-package dbPostTests;
+package dbPostTest;
 
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;

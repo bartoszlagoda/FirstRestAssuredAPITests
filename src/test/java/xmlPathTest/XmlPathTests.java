@@ -1,4 +1,4 @@
-package xmlPathTests;
+package xmlPathTest;
 
 import io.restassured.path.xml.XmlPath;
 import io.restassured.path.xml.element.Node;

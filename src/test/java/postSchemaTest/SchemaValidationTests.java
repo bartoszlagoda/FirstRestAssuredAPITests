@@ -1,4 +1,4 @@
-package postSchemaTests;
+package postSchemaTest;
 
 import org.junit.jupiter.api.Test;
 

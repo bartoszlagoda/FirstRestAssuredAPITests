@@ -1,4 +1,4 @@
-package db2PostTests;
+package db2PostTest;
 
 import io.restassured.matcher.ResponseAwareMatcher;
 import io.restassured.response.Response;
@@ -8,11 +8,11 @@ import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.when;
 
-public class ResponseAwareMatcherTests {
+public class ResponseAwareMatcherTest {
 //Response Aware Matcher pozwala na pobieranie w locie danych z response
 // przydatne gdy pole jest kombinacją jakichś innych pól
     @Test
-    public void getPostTest(){
+    public void testGetPost(){
 
         when().
                 get("http://localhost:3000/posts/{postId}", 1).
@@ -25,7 +25,7 @@ public class ResponseAwareMatcherTests {
     }
 
     @Test
-    public void getPostWithLambdaTest(){
+    public void testGetPostWithLambda(){
 
         when().
                 get("http://localhost:3000/posts/{postId}", 1).

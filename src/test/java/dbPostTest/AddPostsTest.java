@@ -1,4 +1,4 @@
-package dbPostTests;
+package dbPostTest;
 
 import io.restassured.http.ContentType;
 import model.Post;
@@ -10,10 +10,10 @@ import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
-public class AddPostsTests {
+public class AddPostsTest {
 
     @Test
-    public void addPostAsStringTest() {
+    public void testAddPostAsString() {
 
         String newPost = "{\n" +
                 "    \"title\": \"Lekca 167: Dodanie nowego posta - zmiana content type\",\n" +
@@ -31,7 +31,7 @@ public class AddPostsTests {
     }
 
     @Test
-    public void addPostFromFileTest(){
+    public void testAddPostFromFile(){
         File newPost = new File("src/test/resources/post.json");
 
         given()
@@ -45,7 +45,7 @@ public class AddPostsTests {
     }
 
     @Test
-    public void addPostAsMapTest(){
+    public void testAddPostAsMap(){
 //        java.lang.IllegalStateException: Cannot serialize object because no JSON serializer found in classpath.
 //        Please put Jackson (Databind), Gson, Johnzon, or Yasson in the classpath
 
@@ -64,7 +64,7 @@ public class AddPostsTests {
     }
 
     @Test
-    public void addPostFromClassTest(){
+    public void testAddPostFromClass(){
         Post newPost = new Post();
         newPost.setTitle("Lekcja 178: Filtrowanie postów - query params");
         newPost.setAuthor("unknownauthor");

@@ -1,4 +1,4 @@
-package dbPostTests;
+package dbPostTest;
 
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Assertions;

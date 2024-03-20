@@ -2,6 +2,7 @@ package dbPostTest;
 
 import io.restassured.http.ContentType;
 import model.Post;
+import org.hamcrest.Matcher;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
@@ -40,7 +41,7 @@ public class UpdatePostsTests {
     }
 
     @Test
-    public void patchTitlePostTest(){
+    public void testPatchTitlePost(){
         Post newPost = new Post();
         newPost.setAuthor("bartoszlagoda");
 
@@ -50,6 +51,21 @@ public class UpdatePostsTests {
                 .body(newPost) // ustalenie tego co bedzie wysylane
                 .when()
                 .patch("http://localhost:3000/posts/5")// PUT służy do aktualizacji całego zasobu
+                .then()
+                .log().all(); // wyświetlenie logów response
+    }
+
+    @Test
+    public void testPatchAuthorPost(){
+        Post newPost = new Post();
+        newPost.setAuthor("bartoszlagoda");
+
+        given()
+                .log().all() // wypisanie logów requesta
+                .contentType(ContentType.JSON) // ustawienie jsonowego kontentu
+                .body(newPost) // ustalenie tego co bedzie wysylane
+                .when()
+                .patch("http://localhost:3000/posts/1")// PUT służy do aktualizacji całego zasobu
                 .then()
                 .log().all(); // wyświetlenie logów response
     }

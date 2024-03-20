@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.given;
 public class ResponseTimeTests {
 
     @Test
-    public void getPostTest() {
+    public void testGetPost() {
 
         long responseTime = given().log().all().when()
                 .get("http://localhost:3000/posts/{postId}", 1).
@@ -20,7 +20,7 @@ public class ResponseTimeTests {
     }
 
     @Test
-    public void getPostInLessThan500msTest() {
+    public void testGetPostInLessThan500ms() {
 
         given().log().all().when()
                 .get("http://localhost:3000/posts/{postId}", 1).

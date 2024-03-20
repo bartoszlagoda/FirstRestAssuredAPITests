@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.given;
 public class VerifyResponseTests {
 
     @Test
-    public void getAllPostTest(){
+    public void testGetAllPost(){
 
         String expected = "{\n" +
                 "  \"title\": \"Lekcja 172: Nadpisywanie istniejącego posta\",\n" +
@@ -31,7 +31,7 @@ public class VerifyResponseTests {
     }
 
     @Test
-    public void getPostContainsTest(){
+    public void testGetPostContains(){
 
         given()
                 .log()
@@ -45,7 +45,7 @@ public class VerifyResponseTests {
     }
 
     @Test
-    public void checkSpecificFieldTest(){
+    public void testCheckSpecificField(){
 
         given()
                 .log()
@@ -61,7 +61,7 @@ public class VerifyResponseTests {
     }
 
     @Test
-    public void getPostObjectTest(){
+    public void testGetPostObject(){
 
         Post newPost = given()
                 .log()
@@ -81,7 +81,7 @@ public class VerifyResponseTests {
     }
 
     @Test
-    public void addPostObjectTest(){
+    public void testAddPostObject(){
         Post newPost = new Post();
         newPost.setTitle("Lekcja 184: Weryfikacja ciała odpowiedzi - porównanie obiektów");
         newPost.setAuthor("Jan Kowalski");

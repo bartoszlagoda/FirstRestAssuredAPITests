@@ -13,7 +13,7 @@ public class GetPostsTests {
      * */
 
     @Test
-    public void getAllPostsAndLogBodyTest() {
+    public void testGetAllPostsAndLogBody() {
         when()
                 .get("http://localhost:3000/posts")
                 .then()
@@ -21,7 +21,7 @@ public class GetPostsTests {
     }
 
     @Test
-    public void getAllPostsAndLogAllTest() {
+    public void testGetAllPostsAndLogAll() {
         when()
                 .get("http://localhost:3000/posts")
                 .then()
@@ -29,7 +29,7 @@ public class GetPostsTests {
     }
 
     @Test
-    public void getAllPostsAndValidateStatusCodeTest() {
+    public void testGetAllPostsAndValidateStatusCode() {
         when()
                 .get("http://localhost:3000/posts")
                 .then()
@@ -39,7 +39,7 @@ public class GetPostsTests {
     }
 
     @Test
-    public void getOnePostAndLogAllTest() {
+    public void testGetOnePostAndLogAll() {
         when()
                 .get("http://localhost:3000/posts/1")
                 .then()
@@ -47,7 +47,7 @@ public class GetPostsTests {
     }
 
     @Test
-    public void getPathParamPostTest(){
+    public void testGetPathParamPost(){
         given()
                 .log()
                 .all()
@@ -60,7 +60,7 @@ public class GetPostsTests {
     }
 
     @Test
-    public void getParamPostTest(){
+    public void testGetParamPost(){
         given()
                 .log()
                 .all()

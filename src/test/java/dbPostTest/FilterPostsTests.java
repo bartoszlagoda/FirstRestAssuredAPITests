@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.given;
 public class FilterPostsTests {
 
     @Test
-    public void filterPostsByAuthorTest(){
+    public void testFilterPostsByAuthor(){
         given()
                 .log()
                 .all()
@@ -24,7 +24,7 @@ public class FilterPostsTests {
     }
 
     @Test
-    public void filterPostsByIdTest(){
+    public void testFilterPostsById(){
         given()
                 .log()
                 .all()
@@ -38,7 +38,7 @@ public class FilterPostsTests {
     }
 
     @Test
-    public void filterPostsByAuthorAndTitleTest(){
+    public void testFilterPostsByAuthorAndTitle(){
         Map<String,Object> params = new HashMap<>();
         params.put("author","bartoszlagoda");
         params.put("title","Lekca 167: Dodanie nowego posta - zmiana content type");
@@ -55,7 +55,7 @@ public class FilterPostsTests {
     }
 
     @Test
-    public void filterPostsByAuthorAndTitleWithStatusLineValidationTest(){
+    public void testFilterPostsByAuthorAndTitleWithStatusLineValidation(){
         Map<String,Object> params = new HashMap<>();
         params.put("author","bartoszlagoda");
         params.put("title","Lekca 167: Dodanie nowego posta - zmiana content type");

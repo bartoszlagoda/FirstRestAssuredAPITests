@@ -33,7 +33,7 @@ public class RequestSpecificationTests {
     }
 
     @Test
-    public void getAllPostsTest(){
+    public void testGetAllPosts(){
         given().
                 spec(spec).
         when()
@@ -43,7 +43,7 @@ public class RequestSpecificationTests {
     }
 
     @Test
-    public void getPostTest(){
+    public void testGetPost(){
         given().
                 baseUri("http://localhost:3000").
                 basePath("posts").

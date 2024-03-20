@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 public class GetSpecificFieldValueTest {
 
     @Test
-    public void checkSpecificFieldWithPathTest(){
+    public void testCheckSpecificFieldWithPath(){
 
         Response response = RestAssured.get("http://localhost:3000/posts/1");
         String author = response.path("author");
@@ -18,7 +18,7 @@ public class GetSpecificFieldValueTest {
     }
 
     @Test
-    public void checkSpecificFieldWithPathWithoutVarAuthorTest(){
+    public void testCheckSpecificFieldWithPathWithoutVarAuthor(){
 
         String response = RestAssured.get("http://localhost:3000/posts/1").path("author");
 
@@ -26,7 +26,7 @@ public class GetSpecificFieldValueTest {
     }
 
     @Test
-    public void checkSpecificFieldWithJsonPathTest(){
+    public void testCheckSpecificFieldWithJsonPath(){
 
         Response response = RestAssured.get("http://localhost:3000/posts/1");
         JsonPath jsonPath = new JsonPath(response.asString());
@@ -36,7 +36,7 @@ public class GetSpecificFieldValueTest {
     }
 
     @Test
-    public void checkSpecificFieldWithJsonPathWithoutVarJsonPathTest(){
+    public void testCheckSpecificFieldWithJsonPathWithoutVarJsonPath(){
 
         String stringResponse = RestAssured.get("http://localhost:3000/posts/1").asString();
         String author = JsonPath.from(stringResponse).get("author");

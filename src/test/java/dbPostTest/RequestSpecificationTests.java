@@ -14,12 +14,12 @@ import static io.restassured.RestAssured.given;
 
 public class RequestSpecificationTests {
 
-    RequestSpecification spec;
+    RequestSpecification reqSpec;
     ResponseSpecification resSpec;
 
     @BeforeEach
-    public void setUp(){
-        spec = new RequestSpecBuilder()
+    public void testSetUp(){
+        reqSpec = new RequestSpecBuilder()
                 .setBaseUri("http://localhost:3000")
                 .setBasePath("posts")
                 .build();
@@ -35,7 +35,7 @@ public class RequestSpecificationTests {
     @Test
     public void testGetAllPosts(){
         given().
-                spec(spec).
+                spec(reqSpec).
         when()
                 .get()
                 .then()

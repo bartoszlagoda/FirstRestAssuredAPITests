@@ -2,80 +2,73 @@ package dbPostTest;
 
 import io.restassured.http.ContentType;
 import model.Post;
+import org.hamcrest.Matcher;
 import org.junit.jupiter.api.Test;
-
-import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
-public class AddPostsTest {
+public class UpdatePostsTests {
 
     @Test
-    public void testAddPostAsString() {
-
-        String newPost = "{\n" +
-                "    \"title\": \"Lekca 167: Dodanie nowego posta - zmiana content type\",\n" +
-                "    \"author\": \"bartoszlagoda\"\n" +
-                "}";
-
-        given()
-                .log().all() // wypisanie logów requesta
-                .contentType(ContentType.JSON) // ustawienie jsonowego kontentu
-                .body(newPost) // ustalenie tego co bedzie wysylane
-                .when()
-                .post("http://localhost:3000/posts")// na jaki adres jest wysylka
-                .then()
-                .log().all(); // wyświetlenie logów response
-    }
-
-    @Test
-    public void testAddPostFromFile(){
-        File newPost = new File("src/test/resources/post.json");
-
-        given()
-                .log().all() // wypisanie logów requesta
-                .contentType(ContentType.JSON) // ustawienie jsonowego kontentu
-                .body(newPost) // ustalenie tego co bedzie wysylane
-                .when()
-                .post("http://localhost:3000/posts")// na jaki adres jest wysylka
-                .then()
-                .log().all(); // wyświetlenie logów response
-    }
-
-    @Test
-    public void testAddPostAsMap(){
-//        java.lang.IllegalStateException: Cannot serialize object because no JSON serializer found in classpath.
-//        Please put Jackson (Databind), Gson, Johnzon, or Yasson in the classpath
-
-        Map<String,Object> newPost = new HashMap<>();
-        newPost.put("title","Lekca 169: Dodanie nowego posta - ładowanie requestu body jako mapa");
-        newPost.put("author","bartoszlagoda");
-
-        given()
-                .log().all() // wypisanie logów requesta
-                .contentType(ContentType.JSON) // ustawienie jsonowego kontentu
-                .body(newPost) // ustalenie tego co bedzie wysylane
-                .when()
-                .post("http://localhost:3000/posts")// na jaki adres jest wysylka
-                .then()
-                .log().all(); // wyświetlenie logów response
-    }
-
-    @Test
-    public void testAddPostFromClass(){
+    public void updatePostTest(){
         Post newPost = new Post();
-        newPost.setTitle("Lekcja 178: Filtrowanie postów - query params");
-        newPost.setAuthor("unknownauthor");
+        newPost.setTitle("Lekcja 172: Nadpisywanie istniejącego posta");
+        newPost.setAuthor("bartoszlagoda");
 
         given()
                 .log().all() // wypisanie logów requesta
                 .contentType(ContentType.JSON) // ustawienie jsonowego kontentu
                 .body(newPost) // ustalenie tego co bedzie wysylane
                 .when()
-                .post("http://localhost:3000/posts")// na jaki adres jest wysylka
+                .put("http://localhost:3000/posts/1")// PUT służy do aktualizacji całego zasobu
                 .then()
                 .log().all(); // wyświetlenie logów response
     }
+
+    @Test
+    public void updateTitlePostTest(){
+        Post newPost = new Post();
+        newPost.setTitle("Lekcja 171: Dodanie nowego posta - klasa Post (UPD: Lekcja 174)");
+
+        given()
+                .log().all() // wypisanie logów requesta
+                .contentType(ContentType.JSON) // ustawienie jsonowego kontentu
+                .body(newPost) // ustalenie tego co bedzie wysylane
+                .when()
+                .put("http://localhost:3000/posts/5")// PUT służy do aktualizacji całego zasobu
+                .then()
+                .log().all(); // wyświetlenie logów response
+    }
+
+    @Test
+    public void testPatchTitlePost(){
+        Post newPost = new Post();
+        newPost.setAuthor("bartoszlagoda");
+
+        given()
+                .log().all() // wypisanie logów requesta
+                .contentType(ContentType.JSON) // ustawienie jsonowego kontentu
+                .body(newPost) // ustalenie tego co bedzie wysylane
+                .when()
+                .patch("http://localhost:3000/posts/5")// PUT służy do aktualizacji całego zasobu
+                .then()
+                .log().all(); // wyświetlenie logów response
+    }
+
+    @Test
+    public void testPatchAuthorPost(){
+        Post newPost = new Post();
+        newPost.setAuthor("bartoszlagoda");
+
+        given()
+                .log().all() // wypisanie logów requesta
+                .contentType(ContentType.JSON) // ustawienie jsonowego kontentu
+                .body(newPost) // ustalenie tego co bedzie wysylane
+                .when()
+                .patch("http://localhost:3000/posts/1")// PUT służy do aktualizacji całego zasobu
+                .then()
+                .log().all(); // wyświetlenie logów response
+    }
+
+
 }

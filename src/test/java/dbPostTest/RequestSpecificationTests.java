@@ -18,7 +18,7 @@ public class RequestSpecificationTests {
     ResponseSpecification resSpec;
 
     @BeforeEach
-    public void testSetUp(){
+    public void setUp(){
         reqSpec = new RequestSpecBuilder()
                 .setBaseUri("http://localhost:3000")
                 .setBasePath("posts")

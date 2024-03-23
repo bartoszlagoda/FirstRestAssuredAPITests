@@ -1194,6 +1194,56 @@
       "title": "Lekcja 184: Weryfikacja ciała odpowiedzi - porównanie obiektów",
       "author": "Jan Kowalski",
       "id": 240
+    },
+    {
+      "title": "Lekca 167: Dodanie nowego posta - ładowanie request body z pliku",
+      "author": "bartoszlagoda",
+      "id": 241
+    },
+    {
+      "title": "Lekcja 178: Filtrowanie postów - query params",
+      "author": "unknownauthor",
+      "id": 242
+    },
+    {
+      "title": "Lekca 167: Dodanie nowego posta - zmiana content type",
+      "author": "bartoszlagoda",
+      "id": 243
+    },
+    {
+      "author": "bartoszlagoda",
+      "title": "Lekca 169: Dodanie nowego posta - ładowanie requestu body jako mapa",
+      "id": 244
+    },
+    {
+      "title": "Lekcja 178: Filtrowanie postów - query params",
+      "author": "unknownauthor",
+      "id": 245
+    },
+    {
+      "title": "Lekca 167: Dodanie nowego posta - ładowanie request body z pliku",
+      "author": "bartoszlagoda",
+      "id": 246
+    },
+    {
+      "title": "Lekca 167: Dodanie nowego posta - zmiana content type",
+      "author": "bartoszlagoda",
+      "id": 247
+    },
+    {
+      "author": "bartoszlagoda",
+      "title": "Lekca 169: Dodanie nowego posta - ładowanie requestu body jako mapa",
+      "id": 248
+    },
+    {
+      "title": "Lekcja 184: Weryfikacja ciała odpowiedzi - porównanie obiektów",
+      "author": "Jan Kowalski",
+      "id": 249
+    },
+    {
+      "title": "Lekcja 184: Weryfikacja ciała odpowiedzi - porównanie obiektów",
+      "author": "Jan Kowalski",
+      "id": 250
     }
   ],
   "comments": [
